@@ -27,14 +27,17 @@ function get_day_of_week ($w) {
       <div class="h-full">
         <img src="img/header-logo.png" alt="" class="h-full">
       </div>
+      <!-- 
       <div>
         <a href="/auth/login" class="text-white bg-blue-400 px-4 py-2 rounded-3xl bg-gradient-to-r from-blue-600 to-blue-200">ログイン</a>
       </div>
+      -->
     </div>
   </header>
 
   <main class="bg-gray-100">
     <div class="w-full mx-auto p-5">
+      <!-- 
       <div id="filter" class="mb-8">
         <h2 class="text-sm font-bold mb-3">フィルター</h2>
         <div class="flex">
@@ -44,13 +47,10 @@ function get_day_of_week ($w) {
           <a href="" class="px-3 py-2 text-md font-bold mr-2 rounded-md shadow-md bg-white">未回答</a>
         </div>
       </div>
+      -->
       <div id="events-list">
         <div class="flex justify-between items-center mb-3">
           <h2 class="text-sm font-bold">一覧</h2>
-          <div class="text-xs font-bold p-2 bg-white rounded-sm">
-            <a href="" class="px-2 py-1 bg-blue-600 text-white mr-2 rounded-sm">カード</a>
-            <a href="" class="text-gray-400">カレンダー</a>
-          </div>
         </div>
 
         <?php foreach ($events as $event) : ?>
@@ -70,12 +70,18 @@ function get_day_of_week ($w) {
             <div class="flex flex-col justify-between text-right">
               <div>
                 <?php if ($event['id'] % 3 === 1) : ?>
+                  <!--
                   <p class="text-sm font-bold text-yellow-400">未回答</p>
                   <p class="text-xs text-yellow-400">期限 <?php echo date("m月d日", strtotime('-3 day', $end_date)); ?></p>
+                  -->
                 <?php elseif ($event['id'] % 3 === 2) : ?>
+                  <!-- 
                   <p class="text-sm font-bold text-gray-300">不参加</p>
+                  -->
                 <?php else : ?>
+                  <!-- 
                   <p class="text-sm font-bold text-green-400">参加</p>
+                  -->
                 <?php endif; ?>
               </div>
               <p class="text-sm"><span class="text-xl"><?php echo $event['total_participants']; ?></span>人参加 ></p>
